@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp/ButtomNav/home_screen.dart';
 import 'package:whatsapp/home.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:whatsapp/login_screen.dart';
@@ -17,11 +18,12 @@ class MyApp extends StatelessWidget {
       builder: (_, child) {
         return MaterialApp(
           routes: {
-            '/':(context)=>Home(),
-            '/logInScreen':(context)=>LogIn(),
-            '/singUpScreen':(context)=>SingupScreen()
+            '/': (context) => Home(),
+            '/logInScreen': (context) => LogIn(),
+            '/singUpScreen': (context) => SingupScreen(),
+            '/homeScreen': (context) => HomeScreen(),
           },
-          initialRoute: '/',
+          initialRoute: '/homeScreen',
           theme: ThemeData(
             appBarTheme: AppBarThemeData(
               centerTitle: true,
@@ -34,23 +36,21 @@ class MyApp extends StatelessWidget {
                 foregroundColor: Colors.black87,
                 backgroundColor: Colors.white,
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12)
-                )
-              )
+                  borderRadius: BorderRadius.circular(12),
+                ),
+              ),
             ),
             inputDecorationTheme: InputDecorationThemeData(
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12),
-                gapPadding: 5
+                gapPadding: 5,
               ),
-              hintStyle: TextStyle(
-                fontSize: 14.sp
-              )
-            )
+              hintStyle: TextStyle(fontSize: 14.sp),
+            ),
           ),
-          
+
           title: 'WhatsApp Clone',
-          
+
           debugShowCheckedModeBanner: false,
         );
       },
